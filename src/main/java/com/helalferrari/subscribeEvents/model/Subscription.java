@@ -1,0 +1,54 @@
+package com.helalferrari.subscribeEvents.model;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "tbl_subscription")
+public class Subscription {
+
+    @Id
+    private SubscriptionID id;
+
+    @Column(name = "created_at")
+    private LocalDateTime created_at;
+
+    @Column(name="level")
+    private Integer level;
+
+    @Column(name="unique_id", nullable=false, length = 45)
+    private String uniqueID;
+
+    public SubscriptionID getId() {
+        return id;
+    }
+
+    public void setId(SubscriptionID id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public String getUniqueID() {
+        return uniqueID;
+    }
+
+    public void setUniqueID(String uniqueID) {
+        this.uniqueID = uniqueID;
+    }
+}
