@@ -3,7 +3,7 @@ package com.helalferrari.subscribeEvents.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "tbl_conference")
 public class Conference {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

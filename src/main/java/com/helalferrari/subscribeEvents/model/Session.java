@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
 @Entity
 @Table(name="tbl_sesion")
@@ -12,7 +11,7 @@ public class Session {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "session_id")
-    private Integer id_session;
+    private Integer id;
     @Column(name = "title", length =  255, nullable = false)
     private String title;
     @Column(name = "start_date", nullable = false)
@@ -24,12 +23,12 @@ public class Session {
     @JoinColumn(name = "tbl_conference_id_conference")
     private Conference conference;
 
-    public Integer getId_session() {
-        return id_session;
+    public Integer getId() {
+        return id;
     }
 
-    public void setId_session(Integer id_session) {
-        this.id_session = id_session;
+    public void setId(Integer id_session) {
+        this.id = id_session;
     }
 
     public String getTitle() {
